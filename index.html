@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazim Schull - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --terracotta: #8B4513; --terracotta-light: #A0522D; --cream: #FDF5E6; --cream-dark: #F5EBD7; --sage: #9CAF88; --sage-dark: #7A8B6A; --charcoal: #2D2926; --charcoal-light: #4A4540; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', sans-serif; background-color: var(--cream); color: var(--charcoal); line-height: 1.7; font-size: 17px; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 5rem 0; }
+        .accent-bar { height: 4px; background: linear-gradient(90deg, var(--terracotta) 0%, var(--sage) 100%); width: 120px; margin: 0 auto 3rem; }
+        .section-title { text-align: center; font-size: 2.2rem; color: var(--terracotta); margin-bottom: 1rem; }
+        .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%); position: relative; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--terracotta), var(--sage)); }
+        .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--terracotta); box-shadow: 0 8px 32px rgba(139, 69, 19, 0.25); margin-bottom: 2rem; background-color: var(--sage-dark); }
+        .hero h1 { font-size: 3.5rem; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: 0.02em; }
+        .hero .tagline { font-size: 1.4rem; color: var(--charcoal-light); font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; }
+        .visual-element { width: 60px; height: 4px; background: var(--terracotta); margin-top: 2rem; border-radius: 2px; }
+        .about { background-color: white; }
+        .about-content { max-width: 650px; margin: 0 auto; text-align: center; font-size: 1.15rem; color: var(--charcoal-light); }
+        .projects { background-color: var(--cream-dark); }
+        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+        .project-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 41, 38, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(45, 41, 38, 0.15); }
+        .project-card img { width: 100%; height: 140px; object-fit: cover; background-color: var(--sage); }
+        .project-card-content { padding: 1.5rem; }
+        .project-card h3 { font-size: 1.25rem; color: var(--terracotta); margin-bottom: 0.5rem; }
+        .project-card p { font-size: 0.95rem; color: var(--charcoal-light); }
+        .publications { background-color: white; }
+        .pub-list { max-width: 600px; margin: 0 auto; }
+        .pub-item { display: flex; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--cream-dark); }
+        .pub-item:last-child { border-bottom: none; }
+        .pub-year { font-weight: 600; color: var(--terracotta); min-width: 60px; font-size: 1.1rem; }
+        .pub-title { color: var(--charcoal); font-size: 1.1rem; }
+        .contact { background-color: var(--charcoal); color: var(--cream); }
+        .contact .section-title { color: var(--cream); }
+        .contact-links { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .contact-links a { color: var(--cream); text-decoration: none; font-size: 1.2rem; position: relative; padding-bottom: 4px; transition: color 0.3s ease; }
+        .contact-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--sage); transform: scaleX(0); transform-origin: right; transition: transform 0.3s ease; }
+        .contact-links a:hover { color: var(--sage); }
+        .contact-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+        footer { text-align: center; padding: 2rem; background-color: var(--charcoal); color: var(--sage); font-size: 0.9rem; }
+        @media (max-width: 700px) { .hero h1 { font-size: 2.5rem; } .projects-grid { grid-template-columns: 1fr; } .pub-item { flex-direction: column; gap: 0.5rem; } .contact-links { flex-direction: column; align-items: center; gap: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <img src="https://placehold.co/200x200/9CAF88/white?text=Photo" alt="Profile Photo" class="avatar">
+        <h1>Kazim Schull</h1>
+        <p class="tagline">Industrial Engineering Student</p>
+        <div class="visual-element"></div>
+    </section>
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="accent-bar"></div>
+            <p class="about-content">I am a Junior studying industrial engineering.</p>
+        </div>
+    </section>
+    <section class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="accent-bar"></div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <img src="https://placehold.co/400x300/8B4513/white?text=Warehouse+Layout" alt="Senior Capstone Project">
+                    <div class="project-card-content">
+                        <h3>Senior Capstone Project</h3>
+                        <p>Optimizing warehouse layout for efficiency.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="https://placehold.co/400x300/9CAF88/white?text=Data+Analysis" alt="Data Analysis Project">
+                    <div class="project-card-content">
+                        <h3>Data Analysis Project</h3>
+                        <p>Analysis of manufacturing defects using Python.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="https://placehold.co/400x300/2D2926/white?text=Supply+Chain" alt="Supply Chain Simulation">
+                    <div class="project-card-content">
+                        <h3>Supply Chain Simulation</h3>
+                        <p>Discrete event simulation of a production line.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="accent-bar"></div>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <span class="pub-year">2024</span>
+                    <span class="pub-title">Research on Lean Manufacturing in Aerospace Industry</span>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-year">2023</span>
+                    <span class="pub-title">Optimization of Inventory Management Systems</span>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-year">2023</span>
+                    <span class="pub-title">Case Study: Six Sigma Applications in Automotive</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="accent-bar"></div>
+            <div class="contact-links">
+                <a href="mailto:rschull@binghamton.edu">rschull@binghamton.edu</a>
+                <a href="https://github.com/kazimschull" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 Kazim Schull</p>
+    </footer>
+</body>
+</html>
